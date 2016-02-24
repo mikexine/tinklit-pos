@@ -1,0 +1,28 @@
+<ion-view title="Log In!">
+    <ion-content overflow-scroll="true" padding="true">
+    <div class="spacer" style="width: 300px; height: 60px;"></div>
+    <div class="list card stable-bg" id="WhiteCard">
+        <form class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Client ID: </span>
+                <input type="text" placeholder="Client ID" ng-model="user.client">
+            </label>
+        </form>
+
+        <form class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Token: </span>
+                <input type="text" placeholder="Token" ng-model="user.token">
+            </label>
+        </form>
+                <button class="button button-light button-block  icon ion-qr-scanner" ng-click="scanNow(user)"></button>
+
+        <button class="button button-block button-calm ink icon ion-log-in" ng-click="signIn(user)"></button>
+
+    </div>
+    </ion-content>
+
+        <div class="bar bar-footer" ng-click="showPopup()">
+   <h1 class="title"><i class="icon ion-ios-help-outline"></i></h1>
+</div>
+</ion-view>

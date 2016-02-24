@@ -1,0 +1,18 @@
+{
+  "name": "simple-tinklit",
+  "app_id": "ede76d8c",
+  "defaultBrowser": "google chrome",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://api-staging.tinkl.it/v1"
+    }
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
+}

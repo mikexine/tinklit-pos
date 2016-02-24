@@ -1,0 +1,31 @@
+<ion-view title="Tinkl.it POS">
+    <ion-content overflow-scroll="true" padding="true">
+        <div class="list card stable-bg" id="WhiteCard">
+
+        <form class="list">
+            <label class="item item-input item-floating-label" name="euro">
+                <span class="input-label">€&nbsp;</span>
+                <input type="number" placeholder="insert amount" ng-model="rawTransaction.amount">
+            </label>
+        </form>
+        <form class="list">
+            <label class="item item-input item-floating-label" name="description">
+                <span class="input-label">What?</span>
+                <input type="text" placeholder="insert description" ng-model="rawTransaction.description">
+            </label>
+        </form>
+        <a class="button button-block button-calm ink icon ion-social-bitcoin" ng-click="pay(rawTransaction)"></a>
+        </div>
+        <div class="card" id="WhiteCard">
+        <div class="list">
+            <a class="item item-icon-left"> <i class="icon ion-alert"></i>Tinkl.it status: {{ statuscard.status }}</a>
+            <a class="item item-icon-left"> <i class="icon ion-social-euro"></i>BTC/EUR rate: {{ statuscard.rate }}</a>
+            <a class="item item-icon-left"> <i class="icon ion-clock"></i>Last check: {{ statuscard.time }}</a>
+        </div>
+                        
+        </div>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <a ui-sref="invoices" class="button button-block button-outline ink icon ion-android-document">&nbsp; Past Invoices</a>
+    </ion-content>
+</ion-view>
+

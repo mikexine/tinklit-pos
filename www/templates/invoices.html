@@ -1,0 +1,29 @@
+<ion-view title="Invoices">
+    <ion-content overflow-scroll="true" padding="true">
+    <div class="list">
+    <div ng-repeat="invoice in invoices track by invoice.guid">
+        <div class="card">
+            <div class="item item-text-wrap">
+                <strong>{{invoice.price}} € for {{invoice.item_code}}</strong>. Invoice status: <strong>{{invoice.status}}.</strong> <br />The invoice was created {{ invoice.invoice_time | amCalendar | lowercase }} and the applied BTC/EUR rate was: {{invoice.rate}}; invoice issued for {{invoice.btc_price }} Bitcoin, to be sent to <small>{{invoice.btc_address}}.</small> 
+
+<span ng-if="invoice.payment_confidence === 'confirmed'">
+        The payment is <strong>confirmed.</strong>
+     </span>
+     <span ng-if="invoice.payment_confidence === 'seen_but_unconfirmed'">
+       The payment is <strong>not confirmed yet.</strong>
+     </span>
+          <span ng-if="invoice.payment_confidence === 'unknown'">
+       The payment was <strong>not received.</strong>
+     </span>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <br />
+    </ion-content>
+
+    <div class="bar bar-footer" ng-click="goToPos()">
+   <h1 class="title"><i class="icon ion-arrow-left-a"></i></h1>
+</div>
+</ion-view>

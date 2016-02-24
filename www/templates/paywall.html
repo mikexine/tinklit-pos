@@ -1,0 +1,19 @@
+<ion-view title="Paywall">
+    <ion-content overflow-scroll="true" padding="true">
+<div id="WhiteCard">
+<qrcode text="bitcoin:{{Data.btc_address}}?amount={{Data.btc_price }}" color-bright="#ff0000"></qrcode>
+        </div>
+
+    <div class="card" id="WhiteCard">
+<p>Send {{ Data.btc_price }} Bitcoin to address {{ Data.btc_address }} for transaction with description "{{ Data.item_code }}". </p><p>The applied rate is 1 BTC = {{ Data.rate }} EUR. </p><p>You have 
+<timer countdown="900" max-time-unit="'minute'" interval="1000">{{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer> to complete the operation. If you want, you can check this transaction on tinkl.it's website, <a href="{{ Data.url }}" target="_blank">click here</a>!</p>
+
+
+        </div>
+        <button class="button button-block button-outline ink icon ion-bag" ng-click="finish()">&nbsp; Back to POS</a>
+
+    </ion-content>
+</ion-view>
+
+
+
